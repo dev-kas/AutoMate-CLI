@@ -1,33 +1,3 @@
-# NodeJS-TypeScript Template
+# AutoMate-CLI
 
-A Simple NodeJS and TypeScript template.
-
-Download via
-
-```sh
-git clone https://github.com/dev-kas/NodeJS-TypeScript.git MyNodeJS-TypeScript-Project && cd MyNodeJS-TypeScript-Project
-```
-
-Install dependencies via
-
-```sh
-npm install --legacy-peer-deps
-```
-
-Build via
-
-```sh
-npm run build
-```
-
-Start via
-
-```sh
-npm run start
-```
-
-Build + Start (Dev) via
-
-```sh
-npm run dev
-```
+Please note that to build this, Node.js version less than 16 or exactly 16 is required. I do not know why.

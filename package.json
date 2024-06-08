@@ -1,18 +1,22 @@
 {
-  "name": "nodejs-typescript-template",
-  "version": "1.0.0",
-  "description": "A simple NodeJS + TypeScript template.",
+  "name": "automate-cli",
+  "version": "1.0.0.0",
+  "description": "AutoMate CLI",
   "main": "dist/index.js",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
+    "build": "webpack",
+    "build:mac": "tsc && pkg dist/index.js --target mac-x64 --out-path dist/mac",
     "start": "node dist/index.js",
     "dev": "tsc && node dist/index.js"
   },
+  "config": {
+    "product_name": "AutoMate CLI"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dev-kas/NodeJS-TypeScript.git"
+    "url": "git+https://github.com/dev-kas/AutoMate-CLI.git"
   },
   "keywords": [
     "NodeJS-TypeScript",
@@ -27,11 +31,20 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dev-kas/NodeJS-TypeScript/issues"
+    "url": "https://github.com/dev-kas/AutoMate-CLI/issues"
   },
-  "homepage": "https://github.com/dev-kas/NodeJS-TypeScript#readme",
+  "homepage": "https://github.com/dev-kas/AutoMate-CLI#readme",
   "devDependencies": {
     "@types/node": "^20.14.2",
-    "typescript": "^5.4.5"
+    "terser-webpack-plugin": "^5.3.10",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.4.5",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "robotjs": "^0.6.0"
   }
 }
