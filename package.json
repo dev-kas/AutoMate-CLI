@@ -1,0 +1,37 @@
+{
+  "name": "nodejs-typescript-template",
+  "version": "1.0.0",
+  "description": "A simple NodeJS + TypeScript template.",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsc && node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dev-kas/NodeJS-TypeScript.git"
+  },
+  "keywords": [
+    "NodeJS-TypeScript",
+    "template",
+    "TypeScript",
+    "NodeJS"
+  ],
+  "author": {
+    "name": "KAS Dev",
+    "email": "owner@glitchiethedev.com",
+    "url": "https://github.com/dev-kas"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dev-kas/NodeJS-TypeScript/issues"
+  },
+  "homepage": "https://github.com/dev-kas/NodeJS-TypeScript#readme",
+  "devDependencies": {
+    "@types/node": "^20.14.2",
+    "typescript": "^5.4.5"
+  }
+}
