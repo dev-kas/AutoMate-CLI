@@ -41,5 +41,4 @@ cli
         console.error('< Uncaught ReferenceError:', cmd.toUpperCase(), "is not defined");
       }
     }
-    console.log('Bye!');
   });
