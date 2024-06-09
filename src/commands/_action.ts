@@ -76,7 +76,7 @@ cli.action(async () => {
         if (cmd === "type") functions.type(...args);
         if (cmd === "wait") functions.wait(...args);
       } else {
-        console.log('< Uncaught ReferenceError:', cmd, "is not defined");
+        console.error('< Uncaught ReferenceError:', cmd.toUpperCase(), "is not defined");
       }
     }
   }

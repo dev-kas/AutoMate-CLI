@@ -1,0 +1,63 @@
+-- AutoMate Script Prototype File
+
+-- this is a single line comment
+
+--< this is a
+    really long
+    multi-line
+    comment
+>--
+
+-- This language is not case sensitive
+-- Lines can end with a semicolon (;) or a new line (\n)
+
+-- commands:
+
+-- Move mouse to (X, Y)
+--<
+    MOVE <x> <y>
+        defaults:
+            x: current_pos
+            y: current_pos
+>--
+
+MOVE 100 100
+
+-- Click mouse at (X, Y)
+--<
+    CLICK <button: left/middle/right> <x> <y> <state: tap/down/up> <dbl: true/false>
+        defaults:
+            button: left
+            x: current_pos
+            y: current_pos
+            state: tap
+            dbl: false
+>--
+
+CLICK left 100 100
+CLICK right 100 100
+CLICK
+
+-- Press key
+--<
+    KEY <key> <state: tap/down/up>
+        defaults:
+            state: tap
+>--
+
+KEY k down
+KEY k up
+
+-- Typewrte string
+--<
+    TYPE <string>
+>--
+
+TYPE Hello, World!
+
+-- wait for X ms
+--<
+    WAIT <duration>
+>--
+
+WAIT 1000

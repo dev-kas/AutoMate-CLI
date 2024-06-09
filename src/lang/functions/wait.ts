@@ -1,3 +1,12 @@
+/*
+-- wait for X ms
+--<
+    WAIT <duration>
+>--
+
+WAIT 1000
+*/
+
 export function wait (...args: string[]): void {
   const unparsedMs = args[0]
   if (typeof unparsedMs === 'undefined') {
@@ -7,7 +16,7 @@ export function wait (...args: string[]): void {
   if (!isNaN(ms)) {
     const start = Date.now()
     let elapsed = 0
-    while (elapsed <= ms) {
+    while (elapsed < ms) {
       elapsed = Date.now() - start
       console.log('< WAIT: elapsed', elapsed + 'ms')
     }

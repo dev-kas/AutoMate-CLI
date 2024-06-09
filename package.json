@@ -8,6 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "build:mac": "tsc && pkg dist/index.js --target mac-x64 --out-path dist/mac",
+    "build:win": "tsc && pkg dist/index.js --target node16-win-x64 --out-path dist/win",
+    "build:linux": "tsc && pkg dist/index.js --target node16-linux-x64 --out-path dist/linux",
     "start": "node dist/index.js",
     "dev": "tsc && node dist/index.js"
   },

@@ -68,7 +68,7 @@ module.exports = {
       __config__: JSON.stringify(pkg.config),
     }),
   ],
-  mode: 'production',
+  mode: 'development',
   target: 'node',
   externals: {
     'robotjs': 'commonjs robotjs',

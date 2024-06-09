@@ -1,7 +1,0 @@
-#!/bin/bash
-
-ARGS="$@"
-# rm -rf dist
-npm run build
-clear
-node ./dist/index.js $ARGS
