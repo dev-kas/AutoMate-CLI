@@ -40,7 +40,7 @@ export function click(...args: string[]): void {
 
   robot.moveMouse(position.x, position.y);
   if (state === 'tap') {
-    console.debug(`< arg4: ${args[4]} dbl: ${dbl} button: ${button} x: ${x} y: ${y}`);
+    // console.debug(`< arg4: ${args[4]} dbl: ${dbl} button: ${button} x: ${x} y: ${y}`);
     robot.mouseClick(button, dbl);
   } else if (state === 'down') {
     robot.mouseToggle('down', button);
@@ -48,5 +48,5 @@ export function click(...args: string[]): void {
     robot.mouseToggle('up', button);
   }
 
-  console.log(`< CLICK: clicked at (${x}, ${y})`);
+  // console.log(`< CLICK: clicked at (${x}, ${y})`);
 }

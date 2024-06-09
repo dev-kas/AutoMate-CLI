@@ -29,4 +29,5 @@ export function move(...args: string[]): void {
   };
 
   robot.moveMouse(position.x, position.y);
+  // console.log(`< MOVE: Moved mouse to (${position.x}, ${position.y})`);
 }

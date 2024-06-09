@@ -59,12 +59,18 @@ cli.action(async () => {
       let [cmd, ...args]: [...string[]] = token.split(' ');
       cmd = cmd.toLowerCase();
       if (cmd === 'help') {
-        console.log('CLEAR    Clear the console');
+        console.log(`${chalk.greenBright('CLEAR')}    ${chalk.green('Clear the console')}`);
         // console.log('EDITOR   Enter editor mode');
-        console.log('EXIT     Exit the REPL');
-        console.log('HELP     Print this help message');
+        console.log(`${chalk.greenBright('EXIT')}     ${chalk.green('Exit the REPL')}`);
+        console.log(`${chalk.greenBright('HELP')}     ${chalk.green('Print this help message')}`);
         // console.log('LOAD     Load JS from a file into the REPL session');
         // console.log('SAVE     Save all evaluated commands in this REPL session to a file');
+        console.log(chalk.gray('=====    ==========================='));
+        console.log(`${chalk.greenBright('CLICK')}    ${chalk.green('CLICK <button: left/middle/right> <x> <y> <state: tap/down/up> <dbl: true/false>')}`);
+        console.log(`${chalk.greenBright('KEY')}      ${chalk.green('KEY <key> <state: tap/down/up>')}`);
+        console.log(`${chalk.greenBright('MOVE')}     ${chalk.green('MOVE <x> <y>')}`);
+        console.log(`${chalk.greenBright('TYPE')}     ${chalk.green('TYPE <data>')}`);
+        console.log(`${chalk.greenBright('WAIT')}     ${chalk.green('WAIT <duration>')}`);
       } else if (cmd === 'exit') {
         break mainLoop;
       } else if (cmd === 'clear') {
@@ -74,9 +80,9 @@ cli.action(async () => {
         if (cmd === "key") functions.key(...args);
         if (cmd === "move") functions.move(...args);
         if (cmd === "type") functions.type(...args);
-        if (cmd === "wait") functions.wait(...args);
+        if (cmd === "wait") await functions.wait(...args);
       } else {
-        console.error('< Uncaught ReferenceError:', cmd.toUpperCase(), "is not defined");
+        console.error(`< ${chalk.redBright('Uncaught ReferenceError')}:`, chalk.bgRed(" "+cmd.toUpperCase()+" "), chalk.red("is not defined"));
       }
     }
   }

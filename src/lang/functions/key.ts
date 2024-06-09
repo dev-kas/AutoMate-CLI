@@ -18,12 +18,12 @@ export function key(...args: string[]): void {
 
   if (state === 'down') {
     robot.keyToggle(key, 'down');
-    console.log(`< KEY: Pressed '${key}'`);
+    // console.log(`< KEY: Pressed '${key}'`);
   } else if (state === 'up') {
     robot.keyToggle(key, 'up');
-    console.log(`< KEY: Released '${key}'`);
+    // console.log(`< KEY: Released '${key}'`);
   } else {
     robot.keyTap(key);
-    console.log(`< KEY: Tapped '${key}'`);
+    // console.log(`< KEY: Tapped '${key}'`);
   }
 }
