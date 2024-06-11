@@ -37,8 +37,9 @@ cli.action(async () => {
       chalk.greenBright(version.minor) +
       '.' +
       chalk.yellowBright(version.patch) +
-      '.' +
-      chalk.redBright(version.extra) +
+      ((()=>{
+        if(version.extra && version.extra.trim() !== '') return `.${version.extra}`
+      })()),
       '.',
   );
   console.log('Type ' + chalk.green('HELP') + ' for more information.');

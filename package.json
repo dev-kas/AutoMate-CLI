@@ -1,15 +1,16 @@
 {
   "name": "automate-cli",
-  "version": "1.0.0.1",
+  "version": "1.0.1",
   "description": "AutoMate CLI",
   "main": "dist/index.js",
   "type": "commonjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "build:mac": "webpack && pkg dist/index.js --target mac-x64 --out-path out/darwin",
-    "build:win": "webpack && pkg dist/index.js --target node16-win-x64 --out-path out/win32",
-    "build:linux": "webpack && pkg dist/index.js --target node16-linux-x64 --out-path out/linux",
+    "build:mac": "webpack && pkg dist/index.js --target mac-x64 --output out/darwin/km",
+    "build:win": "webpack && pkg dist/index.js --target node16-win-x64 --output out/win32/km.exe",
+    "build:linux": "webpack && pkg dist/index.js --target node16-linux-x64 --output out/linux/km",
+    "build:all": "webpack && pkg dist/index.js --target node16-win-x64 --output out/win32/km.exe && pkg dist/index.js --target mac-x64 --output out/darwin/km && pkg dist/index.js --target node16-linux-x64 --output out/linux/km",
     "start": "node dist/index.js",
     "dev": "webpack && node dist/index.js"
   },
