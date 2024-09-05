@@ -13,8 +13,8 @@ MOVE 100 100
 */
 
 export function move(...args: string[]): void {
-  let x = args[1] || String(robot.getMousePos().x);
-  let y = args[2] || String(robot.getMousePos().y);
+  let x = args[0] || String(robot.getMousePos().x);
+  let y = args[1] || String(robot.getMousePos().y);
 
   if (x === 'current_pos') {
     x = String(robot.getMousePos().x);
