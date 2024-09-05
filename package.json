@@ -7,9 +7,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "build:mac": "webpack && pkg dist/index.js --target mac-x64 --output out/darwin/km",
-    "build:win": "webpack && pkg dist/index.js --target node16-win-x64 --output out/win32/km.exe",
-    "build:linux": "webpack && pkg dist/index.js --target node16-linux-x64 --output out/linux/km",
+
+    "build:mac": "webpack && pkg dist/index.js --targets node16-macos-x64,node16-macos-arm64 --output out/darwin/automate-mac",
+    "build:win": "webpack && pkg dist/index.js --target node16-win-x64 --output out/win32/automate.exe",
+    "build:linux": "webpack && pkg dist/index.js --target node16-linux-x64 --output out/linux/automate-linux",
+
     "build:all": "webpack && pkg dist/index.js --target node16-win-x64 --output out/win32/km.exe && pkg dist/index.js --target mac-x64 --output out/darwin/km && pkg dist/index.js --target node16-linux-x64 --output out/linux/km",
     "start": "node dist/index.js",
     "dev": "webpack && node dist/index.js"
