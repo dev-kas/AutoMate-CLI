@@ -10,20 +10,20 @@ cli
   .option('-r, --repeat <number>', 'Repeat the script (0: Infinity)', '1')
   .description('Run a .KM MacroScript')
   .action(async (filename, options) => {
-    if (!fs.existsSync(path.join(process.cwd(), filename))) {
+    if (!fs.existsSync(path.resolve(filename))) {
       console.error(`File ${filename} does not exist`);
       process.exit(1);
     }
 
     let repeat = Number(options.repeat);
 
-    if (repeat < 0) {
+    if (repeat === 0) {
       repeat = Infinity;
     }
 
     // console.log(chalk.bold(`Running ${filename} ${repeat} times...`));
 
-    const data = fs.readFileSync(path.join(process.cwd(), filename), 'utf-8');
+    const data = fs.readFileSync(path.resolve(filename), 'utf-8');
 
     const tokens = tokenize(data);
 
